@@ -4,10 +4,6 @@ students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
 list_ = list(students)
 list_.sort()
 
-med_list = []
-da = grades[::]
-print(da)
-
 dictionary = {}
 dictionary[list_[0]] = sum(grades[0])/len(grades[0])
 dictionary[list_[1]] = sum(grades[1])/len(grades[1])
