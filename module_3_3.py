@@ -12,5 +12,8 @@ values_dict = { 'a': 0, 'b': '0', 'c': False }
 print_params(*values_list)
 print_params(**values_dict)
 
-values_list = ['0', 0.2]
-print_params(*values_list, 42)
+values_list_2 = [54.32, 'Строка']
+print_params(*values_list_2, 42)
+
+values_dict = {'a':1, 'b':2}
+print_params(**values_dict)
