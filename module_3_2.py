@@ -17,14 +17,14 @@ def is_address_valid(address):
     if not address.__contains__('@'):
         return False
     for domain in domains:
-        if address.__contains__(domain):
+        if address.endswith(domain):
             return True
     return False
 
 
 send_email("Проверка связи 1", "recipient@gmail.com")  # correct
-send_email("Проверка связи 2", "recipient@gmail.com", sender="university.help@gmail.ru")  # correct
-send_email("Проверка связи 3", "recipient@gmail.com", sender="university.help@gmail.net")  # same sender
+send_email("Проверка связи 2", "recipient@gmail.com", sender="university.help@gmail.com")  # correct
+send_email("Проверка связи 3", "university.help@gmail.net", sender="university.help@gmail.net")  # same sender
 send_email("Проверка связи 4", "recipientgmail.ru", sender="university.help@gmail.com")  # unable to send
 send_email("Проверка связи 5", "recipient@gmail.su", sender="university.help@gmail.com")  # unable to send
-send_email("I'm an ice king", "recipient@gmail.su", sender="aniceking@gmail.com")  # unexpected sender
+send_email("I'm an ice king", "recipient@gmail.ru", sender="aniceking@gmail.com")  # unexpected sender
