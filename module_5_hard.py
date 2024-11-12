@@ -23,9 +23,11 @@ class Video:
 
 
 class UrTube:
-    users = {}
-    videos = {}
-    current_user = None
+
+    def __init__(self):
+        self.users = {}
+        self.videos = {}
+        self.current_user = None
 
     def log_in(self, nickname, password):
         if self.users.__contains__(nickname) and hash(self.users[nickname].password) == hash(password):
@@ -93,3 +95,4 @@ ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
 print(ur.current_user)
 
 ur.watch_video('Лучший язык программирования 2024 года!')
+
