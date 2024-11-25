@@ -1,17 +1,7 @@
 import os
 import time
 
-# os.path.join
-# os.path.getmtime
-# os.path.getsize
-# os.path.dirname
-
 directory = '.'
-
-# dir_ = os.getcwd()
-# dir_ = os.path.abspath('module_7_5.py')
-# print(dir_)
-# print(os.path.dirname(dir_))
 
 for root, dirs, files in os.walk(directory):
     for file in files:
