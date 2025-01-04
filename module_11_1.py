@@ -1,23 +1,27 @@
-import time
-from multiprocessing import Pool
+import numpy as np
+import pandas as pd
 
-def read_info(name):
-    all_data = []
-    with open(name, 'r', encoding='UTF-8') as file:
-        line = file.readline()
-        while len(line) > 0:
-            all_data.append(line)
-            line = file.readline()
+numbers = [1, 5, 14]
+dividers = [2, 5, 7]
 
-# time_start = time.time()
-# for fn in ['file 1.txt', 'file 2.txt', 'file 3.txt', 'file 4.txt']:
-#     read_info(fn)
-# time_elapsed = time.time() - time_start
-# print(time_elapsed)
+result1 = np.divide(numbers, dividers)
+result2 = np.append(numbers, dividers)
+result3 = np.abs((-3, -5.5, -1.2))
+result4 = np.floor(1.3)
+result5 = np.floor(1.8)
+result6 = np.round(np.deg2rad(180), 2)
+result7 = np.linspace(0, 7321, 100)
 
-if __name__ == '__main__':
-    time_start = time.time()
-    with Pool() as p:
-        p.map(read_info, [f'file {n}.txt' for n in range(1, 5)])
-    time_elapsed = time.time() - time_start
-    print(time_elapsed)
+print(result1)
+print(result2)
+print(result3)
+print(result4)
+print(result5)
+print(result6)
+print(result7)
+
+data = pd.read_csv('pandas_data.csv')
+df = pd.DataFrame(data)
+print(df)
+print(df.iloc[[1,2], 3])
+print(df.iat[1, 3])
